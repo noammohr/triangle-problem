@@ -1,7 +1,7 @@
 """
 This file contains the function max_path_sum.
 
-Given a text file with a triange of numbers, the function max_path_sum
+Given a text file with a triangle of numbers, the function max_path_sum
 returns the maximum sum of adjacent numbers along a path moving down the
 triangle.
 
