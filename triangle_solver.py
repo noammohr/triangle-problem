@@ -32,35 +32,35 @@ def max_path_sum(filename):
     @return:         The value of the maximum sum down any path
     """
     # Read the file into memory.
-    file = open(filename, 'r')
+    triangle_file = open(filename, 'r')
     try:
-        triangle = _read_file_to_triangle(file)
+        triangle = _read_file_to_triangle(triangle_file)
     finally:
-        file.close()
+        triangle_file.close()
 
     # Calculate and return the max path sum.
     return _calculate_max_path_sum(triangle)
 
 
-def _read_file_to_triangle(file):
+def _read_file_to_triangle(triangle_file):
     """
     Read the contents of a file and store the integer values in a triangular
     dictionary of lists.
 
-    @param file: The opened file with the properly formatted integer values
-                 of a triangle. Each line of the file must represent a row
-                 of the triangle, and must include only integers separated
-                 by spaces.
-    @return:     A dictionary, each key an integer representing the row of the
-                 triangle, and each value a list of the integer values on that
-                 row of the triangle.
+    @param triangle_file: The opened file with the properly formatted integer
+                          values of a triangle. Each line of the file must
+                          represent a row of the triangle, and must include
+                          only integers separated by spaces.
+    @return: A dictionary, each key an integer representing the row of the
+             triangle, and each value a list of the integer values on that
+             row of the triangle.
     """
     # Initialize the triangle to be stored in memory.
     triangle = {}
 
     # Read lines in from the file one by one, and store them in the triangle.
     line_num = 1
-    line = file.readline()
+    line = triangle_file.readline()
     while line:
         # Divide each line at the white space, and convert each value to an
         # integer.
@@ -72,7 +72,7 @@ def _read_file_to_triangle(file):
 
         # Read the next line in the file.
         line_num += 1
-        line = file.readline()
+        line = triangle_file.readline()
 
     return triangle
 
