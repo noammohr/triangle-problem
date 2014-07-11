@@ -31,14 +31,14 @@ def max_path_sum(filename):
     @param filename: The name of the file with the triangle integer data
     @return:         The value of the maximum sum down any path
     """
-    # Read the file into memory
+    # Read the file into memory.
     file = open(filename, 'r')
     try:
         triangle = _read_file_to_triangle(file)
     finally:
         file.close()
 
-    # Calculate and return the max path sum
+    # Calculate and return the max path sum.
     return _calculate_max_path_sum(triangle)
 
 
@@ -62,14 +62,15 @@ def _read_file_to_triangle(file):
     line_num = 1
     line = file.readline()
     while line:
-        # Divide each line at the white space, and convert each value to an int
+        # Divide each line at the white space, and convert each value to an
+        # integer.
         triangle[line_num] = [int(number) for number in line.split()]
 
-        # Confirm that the number of values in each line is correct
+        # Confirm that the number of values in each line is correct.
         if len(triangle[line_num]) != line_num:
             raise Exception("File is not formatted into a triangle")
 
-        # Read the next line in the file
+        # Read the next line in the file.
         line_num += 1
         line = file.readline()
 
